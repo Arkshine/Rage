@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{43B95C78-8D1A-4D12-B668-2520B38E1DA3}</ProjectGuid>
+    <RootNamespace>fun_amx</RootNamespace>
+    <ProjectName>rage</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\include;$(IncludePath)</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Release/fun.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\;..\sdk;$(METAMOD);$(HLSDK)\common;$(HLSDK)\engine;$(HLSDK)\dlls;$(HLSDK)\pm_shared;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>.\Release/fun.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Release/</AssemblerListingLocation>
+      <ObjectFileName>.\Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x041d</Culture>
+    </ResourceCompile>
+    <Link>
+      <OutputFile>.\Release/$(ProjectName)_amxx.dll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
+      <ProgramDatabaseFile>.\Release/$(ProjectName).pdb</ProgramDatabaseFile>
+      <ImportLibrary>.\Release/$(ProjectName).lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalDependencies>psapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Debug/fun.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\;..\sdk;$(METAMOD);$(HLSDK)\common;$(HLSDK)\engine;$(HLSDK)\dlls;$(HLSDK)\pm_shared;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>.\Debug/$(ProjectName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x041d</Culture>
+    </ResourceCompile>
+    <Link>
+      <OutputFile>Debug/$(ProjectName)_amxx.dll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\Debug/fun_debug.pdb</ProgramDatabaseFile>
+      <ImportLibrary>.\Debug/$(ProjectName)_debug.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalDependencies>psapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\commands_manager\commands_manager.cpp" />
+    <ClCompile Include="..\command\implementations\command_errors.cpp" />
+    <ClCompile Include="..\command\implementations\command_functions.cpp" />
+    <ClCompile Include="..\command\implementations\command_handler.cpp" />
+    <ClCompile Include="..\command\implementations\command_modules.cpp" />
+    <ClCompile Include="..\command\implementations\command_rage.cpp" />
+    <ClCompile Include="..\config_parser\config_parser.cpp" />
+    <ClCompile Include="..\error_manager\error_manager.cpp" />
+    <ClCompile Include="..\function\function.cpp" />
+    <ClCompile Include="..\function\function_safe.cpp" />
+    <ClCompile Include="..\function_creator\function_creator.cpp" />
+    <ClCompile Include="..\global\global.cpp" />
+    <ClCompile Include="..\handlers_manager\handlers_manager.cpp" />
+    <ClCompile Include="..\handler_creator_manager\handler_creator_manager.cpp" />
+    <ClCompile Include="..\libraries_manager\libraries_manager.cpp" />
+    <ClCompile Include="..\library\library.cpp" />
+    <ClCompile Include="..\memory\memory.cpp" />
+    <ClCompile Include="..\modules_manager\modules_manager.cpp" />
+    <ClCompile Include="..\NEW_Util.cpp" />
+    <ClCompile Include="..\parser\filehandler.cpp" />
+    <ClCompile Include="..\parser\node_types\parser_node_array.cpp" />
+    <ClCompile Include="..\parser\node_types\parser_node_labeled.cpp" />
+    <ClCompile Include="..\parser\node_types\parser_node_labeled_array.cpp" />
+    <ClCompile Include="..\parser\node_types\parser_node_labeled_scalar.cpp" />
+    <ClCompile Include="..\parser\node_types\parser_node_num.cpp" />
+    <ClCompile Include="..\parser\node_types\parser_node_string.cpp" />
+    <ClCompile Include="..\parser\parser.cpp" />
+    <ClCompile Include="..\parser\parser_node.cpp" />
+    <ClCompile Include="..\parser\worker_types\parser_worker_any_string.cpp" />
+    <ClCompile Include="..\parser\worker_types\parser_worker_array.cpp" />
+    <ClCompile Include="..\parser\worker_types\parser_worker_array_entry.cpp" />
+    <ClCompile Include="..\parser\worker_types\parser_worker_decimal.cpp" />
+    <ClCompile Include="..\parser\worker_types\parser_worker_hex.cpp" />
+    <ClCompile Include="..\parser\worker_types\parser_worker_labeled_array.cpp" />
+    <ClCompile Include="..\parser\worker_types\parser_worker_labeled_scalar.cpp" />
+    <ClCompile Include="..\parser\worker_types\parser_worker_multi.cpp" />
+    <ClCompile Include="..\parser\worker_types\parser_worker_num.cpp" />
+    <ClCompile Include="..\parser\worker_types\parser_worker_quoted_string.cpp" />
+    <ClCompile Include="..\parser\worker_types\parser_worker_scalar.cpp" />
+    <ClCompile Include="..\parser\worker_types\parser_worker_string.cpp" />
+    <ClCompile Include="..\patcher\patcher.cpp" />
+    <ClCompile Include="..\rage\rage.cpp" />
+    <ClCompile Include="..\sdk\amxxmodule.cpp" />
+    <ClCompile Include="..\util\util.cpp" />
+    <ClCompile Include="..\virtual_function\virtual_function.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\commands_manager\commands_manager.h" />
+    <ClInclude Include="..\include\command\command.h" />
+    <ClInclude Include="..\include\command\implementations\command_modules.h" />
+    <ClInclude Include="..\include\command\implementations\command_errors.h" />
+    <ClInclude Include="..\include\command\implementations\command_functions.h" />
+    <ClInclude Include="..\include\command\implementations\command_handler.h" />
+    <ClInclude Include="..\include\command\implementations\command_rage.h" />
+    <ClInclude Include="..\include\config_parser\config_parser.h" />
+    <ClInclude Include="..\include\CVector.h" />
+    <ClInclude Include="..\include\dirent_os.h" />
+    <ClInclude Include="..\include\dirent_win.h" />
+    <ClInclude Include="..\include\error_manager\error_manager.h" />
+    <ClInclude Include="..\include\functions_manager\functions_manager.h" />
+    <ClInclude Include="..\include\function\function_for_handler.h" />
+    <ClInclude Include="..\include\function\function.h" />
+    <ClInclude Include="..\include\function\function_for_module.h" />
+    <ClInclude Include="..\include\function\function_safe.h" />
+    <ClInclude Include="..\include\function\function_virtual.h" />
+    <ClInclude Include="..\include\function_creator\function_creator.h" />
+    <ClInclude Include="..\include\function_incomplete\function_incomplete.h" />
+    <ClInclude Include="..\include\function_incomplete\function_incomplete_for_module.h" />
+    <ClInclude Include="..\include\global\global.h" />
+    <ClInclude Include="..\include\handlers_manager\handlers_manager.h" />
+    <ClInclude Include="..\include\handler\handler_for_rage.h" />
+    <ClInclude Include="..\include\handler_creator\handler_creator_for_rage.h" />
+    <ClInclude Include="..\include\handler_creator_manager\handler_creator_manager.h" />
+    <ClInclude Include="..\include\handler_shared\handler_shared.h" />
+    <ClInclude Include="..\include\handler_shared_back\handler_shared_back.h" />
+    <ClInclude Include="..\include\hook\hook.h" />
+    <ClInclude Include="..\include\libraries_manager\libraries_manager.h" />
+    <ClInclude Include="..\include\library\library.h" />
+    <ClInclude Include="..\include\library\library_for_module.h" />
+    <ClInclude Include="..\include\manager\manager.h" />
+    <ClInclude Include="..\include\memory\memory.h" />
+    <ClInclude Include="..\include\modules_manager\modules_manager.h" />
+    <ClInclude Include="..\include\module\module_for_rage.h" />
+    <ClInclude Include="..\include\NEW_Util.h" />
+    <ClInclude Include="..\include\parser\filehandler.h" />
+    <ClInclude Include="..\include\parser\node_types\parser_node_array.h" />
+    <ClInclude Include="..\include\parser\node_types\parser_node_labeled.h" />
+    <ClInclude Include="..\include\parser\node_types\parser_node_labeled_array.h" />
+    <ClInclude Include="..\include\parser\node_types\parser_node_labeled_scalar.h" />
+    <ClInclude Include="..\include\parser\node_types\parser_node_num.h" />
+    <ClInclude Include="..\include\parser\node_types\parser_node_string.h" />
+    <ClInclude Include="..\include\parser\parser.h" />
+    <ClInclude Include="..\include\parser\parser_node.h" />
+    <ClInclude Include="..\include\parser\parser_node_type.h" />
+    <ClInclude Include="..\include\parser\parser_worker.h" />
+    <ClInclude Include="..\include\parser\worker_types\parser_worker_any_string.h" />
+    <ClInclude Include="..\include\parser\worker_types\parser_worker_array.h" />
+    <ClInclude Include="..\include\parser\worker_types\parser_worker_array_entry.h" />
+    <ClInclude Include="..\include\parser\worker_types\parser_worker_decimal.h" />
+    <ClInclude Include="..\include\parser\worker_types\parser_worker_hex.h" />
+    <ClInclude Include="..\include\parser\worker_types\parser_worker_labeled_array.h" />
+    <ClInclude Include="..\include\parser\worker_types\parser_worker_labeled_scalar.h" />
+    <ClInclude Include="..\include\parser\worker_types\parser_worker_multi.h" />
+    <ClInclude Include="..\include\parser\worker_types\parser_worker_num.h" />
+    <ClInclude Include="..\include\parser\worker_types\parser_worker_quoted_string.h" />
+    <ClInclude Include="..\include\parser\worker_types\parser_worker_scalar.h" />
+    <ClInclude Include="..\include\parser\worker_types\parser_worker_string.h" />
+    <ClInclude Include="..\include\patcher\patcher.h" />
+    <ClInclude Include="..\include\rage\rage.h" />
+    <ClInclude Include="..\include\rage\rage_for_handler.h" />
+    <ClInclude Include="..\include\rage\rage_for_module.h" />
+    <ClInclude Include="..\include\rage\rage_hook_phase.h" />
+    <ClInclude Include="..\include\rage\rage_hook_return.h" />
+    <ClInclude Include="..\include\sm_trie_tpl.h" />
+    <ClInclude Include="..\include\stack\stack.h" />
+    <ClInclude Include="..\include\trie\trie.h" />
+    <ClInclude Include="..\include\util\util.h" />
+    <ClInclude Include="..\include\virtual_functions_manager\virtual_functions_manager.h" />
+    <ClInclude Include="..\include\virtual_function\virtual_function.h" />
+    <ClInclude Include="..\include\virtual_function\virtual_function_for_module.h" />
+    <ClInclude Include="..\sdk\moduleconfig.h" />
+    <ClInclude Include="..\sdk\amxxmodule.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

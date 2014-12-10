@@ -1,0 +1,16 @@
+
+Spawn
+{
+	handler : handler
+	
+	vtable : CBaseEntity
+	
+	offsets
+	{
+		cstrike
+		{
+			windows : 0
+			linux : 2
+		}
+	}
+}	

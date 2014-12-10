@@ -1,0 +1,9 @@
+
+cstrike
+{
+	pev 
+	{
+		windows : 4
+		linux : 0x0
+	}
+}

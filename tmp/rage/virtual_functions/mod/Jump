@@ -1,0 +1,16 @@
+
+Jump
+{
+	handler : handler
+	
+	vtable : CBaseEntity
+	
+	offsets
+	{
+		cstrike
+		{
+			windows : 76
+			linux : 78
+		}
+	}
+}	
